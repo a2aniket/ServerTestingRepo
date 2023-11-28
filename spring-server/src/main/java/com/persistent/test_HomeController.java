@@ -1,24 +1,17 @@
 import org.junit.Test;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.GetMapping;
+import static org.junit.Assert.assertEquals;
 
+@Controller
 public class HomeControllerTest {
 
     @Test
-    public void testIndex() throws Exception {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".jsp");
-
+    public void testIndex() {
         HomeController homeController = new HomeController();
-
-        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(homeController)
-                .setViewResolvers(viewResolver)
-                .build();
-
-        mockMvc.perform(get("/"))
-                .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("swagger-ui.html"));
+        String result = homeController.index();
+        assertEquals("redirect:swagger-ui.html", result);
     }
 }
