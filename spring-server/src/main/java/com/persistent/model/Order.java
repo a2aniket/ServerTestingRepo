@@ -23,7 +23,7 @@ import javax.persistence.Id;
  * Order
  */
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-11-27T06:06:31.537Z[UTC]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-11-28T04:24:25.988Z[UTC]")
 @Data
 public class Order {
 

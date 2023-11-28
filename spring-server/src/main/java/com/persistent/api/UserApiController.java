@@ -37,7 +37,7 @@ import java.util.Optional;
 import javax.annotation.Generated;
 import com.persistent.util.Constants;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-11-27T06:06:31.537Z[UTC]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-11-28T04:24:25.988Z[UTC]")
 @Controller
 @RequestMapping("${openapi.swaggerPetstoreOpenAPI30.base-path:/api/v3}")
 public class UserApiController implements UserApi {
